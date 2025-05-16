@@ -3,9 +3,12 @@ import Card from "./Components/Card";
 
 export default function HomePage() {
   return (
-    <main>
-      <h1 className="font-bold">Welcome to Shmovie!</h1>
-      <Card />
+    <main className="flex text-center justify-center m-4 p-4">
+      <div className="">
+        <Card />
+        <h1 className="text-lightgrey">O R</h1>
+        <Card />
+      </div>
     </main>
   );
 }
