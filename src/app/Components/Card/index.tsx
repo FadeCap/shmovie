@@ -1,18 +1,23 @@
 import "./index.css";
+import { fetchMovies } from "@/lib/fetchMovies";
 
-function Card() {
+type Movie = {
+  id: number;
+  original_title: string;
+};
+async function Card() {
+  const movies: Movie[] = await fetchMovies();
+  console.log(movies);
+
   return (
-    <div className="flex-col text-center p-6 m-4 bg-grey text-lightgrey border-2 border-teal max-w-80 rounded-2xl">
-      <div className="flex gap-4">
-        <h2>Movie title</h2>
-        <h3>7.8/10</h3>
-      </div>
-      <div className="w-20 h-20 m-4">
-        <h2>Image goes here</h2>
-      </div>
-      <div>
-        <p>Description here today</p>
-      </div>
+    <div>
+      {movies.map((movie) => (
+        <div key={movie.id} className="border-4 border-teal p-4 rounded-3xl">
+          <h2 className="text-lightgrey text-xl font-bold">
+            {movie.original_title}
+          </h2>
+        </div>
+      ))}
     </div>
   );
 }
