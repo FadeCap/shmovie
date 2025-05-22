@@ -1,8 +1,10 @@
 export async function fetchMovies() {
   const apiKey = process.env.API_KEY;
+  const imageBaseUrl = "https://image.tmdb.org/t/p/";
+  const imageFileSize = "w500";
 
   if (!apiKey) {
-    throw new Error("Missing API_KEY in Env");
+    throw new Error("Missing apiKey");
   }
 
   const options = {
@@ -23,5 +25,6 @@ export async function fetchMovies() {
   }
 
   const data = await res.json();
+  console.log(data.results);
   return data.results;
 }

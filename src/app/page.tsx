@@ -1,5 +1,5 @@
-import "./index.css";
 import Card from "./Components/Card";
+import "./index.css";
 
 export default async function HomePage() {
   return (

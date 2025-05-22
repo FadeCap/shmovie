@@ -9,17 +9,15 @@ type Movie = {
 };
 async function Card() {
   const movies: Movie[] = await fetchMovies();
-  console.log(movies[0]);
   return (
     <div>
       {movies.map((movie) => (
         <div
           key={movie.id}
-          className="border-4 border-teal p-4 rounded-3xl text-lightgrey"
+          className="flex-col m-4 border-4 border-teal p-4 rounded-3xl text-lightgrey bg-grey"
         >
-          <h2 className=" text-xl font-bold flex-row">
-            {movie.original_title}
-          </h2>
+          <h2 className="text-xl font-bold">{movie.original_title}</h2>
+
           {movie.vote_average.toFixed(2)}
           <div className="image">
             {
