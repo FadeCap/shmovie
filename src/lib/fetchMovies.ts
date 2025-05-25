@@ -1,6 +1,6 @@
 export async function fetchMovies() {
   const apiKey = process.env.API_KEY;
-  const apiReadAccessToken = process.env.API_READ_ACCESS_TOKEN
+  const apiReadAccessToken = process.env.API_READ_ACCESS_TOKEN;
   const imageBaseUrl = "https://image.tmdb.org/t/p/";
   const imageFileSize = "w500";
 
