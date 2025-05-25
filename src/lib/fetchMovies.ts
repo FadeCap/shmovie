@@ -1,5 +1,6 @@
 export async function fetchMovies() {
   const apiKey = process.env.API_KEY;
+  const apiReadAccessToken = process.env.API_READ_ACCESS_TOKEN
   const imageBaseUrl = "https://image.tmdb.org/t/p/";
   const imageFileSize = "w500";
 
@@ -11,7 +12,7 @@ export async function fetchMovies() {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ODQ3MjE1ZDFkYWNjN2Y2ZWMzZDA5MmJiMDc0NjUwZCIsIm5iZiI6MTc0NzM4OTY4MC4yNTMsInN1YiI6IjY4MjcwY2YwNTgxN2UwMmYyZDZlZmMwMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RAJCKbYV9tjgGd7Eow0xKj3I0Fy8pFz-naqnaL1M-lY`,
+      Authorization: `Bearer ${apiReadAccessToken}`,
     },
   };
 
