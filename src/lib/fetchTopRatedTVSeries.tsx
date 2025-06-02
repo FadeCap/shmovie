@@ -1,6 +1,6 @@
 // Fetches the Top 100 rated TV series and their poster images
 
-const fetchAllPages = async () => {
+const fetchAllTVPages = async () => {
   const totalPages = 5;
   const apiToken = process.env.API_READ_ACCESS_TOKEN;
 
@@ -11,7 +11,7 @@ const fetchAllPages = async () => {
   }
 
   const topRatedTvSeriesUrl =
-    "https://api.themoviedb.org/3/movie/top_rated?language=en-US";
+    "https://api.themoviedb.org/3/tv/top_rated?language=en-US";
 
   const options = {
     method: "GET",
@@ -52,5 +52,5 @@ const fetchAllPages = async () => {
   // TMDB returns data in `results`, not `items`
   return successfulData.flatMap((data) => data.results || []);
 };
-
-export default fetchAllPages;
+console.log(fetchAllTVPages);
+export default fetchAllTVPages;
