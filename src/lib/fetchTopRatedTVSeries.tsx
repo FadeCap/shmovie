@@ -1,4 +1,4 @@
-// Fetches the top 100 rated movies, and their poster images.
+// Fetches the Top 100 rated TV series and their poster images
 
 const fetchAllPages = async () => {
   const totalPages = 5;
@@ -10,7 +10,7 @@ const fetchAllPages = async () => {
     );
   }
 
-  const topRatedUrl =
+  const topRatedTvSeriesUrl =
     "https://api.themoviedb.org/3/movie/top_rated?language=en-US";
 
   const options = {
@@ -22,7 +22,10 @@ const fetchAllPages = async () => {
   };
 
   const fetchPage = async (page: number) => {
-    const response = await fetch(`${topRatedUrl}&page=${page}`, options);
+    const response = await fetch(
+      `${topRatedTvSeriesUrl}&page=${page}`,
+      options,
+    );
 
     if (!response.ok) {
       throw new Error(`Failed to fetch page ${page}: ${response.status}`);
